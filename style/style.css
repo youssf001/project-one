@@ -1,0 +1,138 @@
+/* start variables */
+:root {
+    --main-color:#10cab7;
+}
+/* end variables */
+/* start global rules */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family:"Work Sans", sans-serif;
+}
+.container {
+    margin:0 auto;
+    padding: 0 15px;
+}
+/* smoll */
+@media (min-width:768px) {
+    .container {
+        width:750px;
+    }
+}
+/* medium */
+@media (min-width:992px) {
+    .container {
+        width:970px;
+    }
+}
+/* large */
+@media (min-width:1200px) {
+    .container {
+        width:1170px;
+    }
+}
+/* end global rules */
+/* start header  */
+.header {
+    padding: 20px;
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo {
+    width: 60px;
+}
+.header .links  {
+    position: relative;
+
+}
+.header .links .icon {
+    width: 30px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: end;
+
+}
+.header .links .icon span {
+    content: "";
+    width: 100%;
+    background-color: black;
+    height: 2px;
+    margin-bottom:5px ;
+}
+.header .links .icon span:nth-child(2) {
+    width: 60%;
+    transition: 0.3s;
+}
+.header .links:hover .icon span:nth-child(2) {
+    width: 100%;
+}
+.header .links ul {
+    list-style: none;
+   background: #f6f6f6;
+    padding: 5px;
+    min-width: 200px;
+    position: absolute;
+    right: 0px;
+    top: calc(100% + 15px);
+    display: none;
+}
+.header .links:hover ul{
+    display: block;
+}
+.header .links ul::before {
+    content:"";
+    position: absolute;
+    right:5px;top: -20px;
+    border: solid 10px transparent;
+    border-bottom-color: #f6f6f6;
+}
+.header .links ul a {
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    font-size: 1.1em;
+    color: #333;
+    transition: 0.3s;
+}
+.header .links ul li:hover a {
+    margin-left: 15px;
+    font-weight: 500;
+}
+.header .links li:not(:last-child){ border-bottom: solid 1px #ddd;}
+/* end header  */
+ /* start landing section */
+ .landing {
+      background: url(../media/landing.jpg) center no-repeat;
+      background-size: cover;
+    height:calc(100vh - 64px);
+    position: relative;
+    z-index: -1;
+ }
+ .intro-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 350px;
+    max-width: 100%;
+    text-transform: capitalize;
+}
+.landing h1 {
+    font-size: 3.5em;
+    font-weight: bold;
+    color: var(--main-color);
+    margin: 16px 0;
+}
+.landing p {
+    font-size: 1.3em;
+    line-height: 40px;
+
+}
+  /* end landing section */
